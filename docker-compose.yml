@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  backend:
+    container_name: mskey-backend
+    build: .
+    restart: always
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+    environment:
+      - SECURITY_ENCRYPTION_KEY=your-secure-encryption-key-change-me
+      - API_SECRET_KEY=your-api-secret-key-change-me
+      - API_HOST=0.0.0.0
+      - API_PORT=8000
+    networks:
+      - mskey-network
+
+  frontend:
+    container_name: mskey-frontend
+    build: ./frontend
+    restart: always
+    depends_on:
+      - backend
+    networks:
+      - mskey-network
+
+  nginx:
+    container_name: mskey-nginx
+    image: nginx:alpine
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./nginx/ssl:/etc/nginx/ssl
+    depends_on:
+      - backend
+      - frontend
+    networks:
+      - mskey-network
+
+networks:
+  mskey-network:
+    driver: bridge 

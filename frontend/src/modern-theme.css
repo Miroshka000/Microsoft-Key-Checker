@@ -1,0 +1,437 @@
+/* Modern Theme CSS for Microsoft Key Checker */
+
+:root {
+  --primary-color: #0078d4;
+  --secondary-color: #2b88d8;
+  --success-color: #107c10;
+  --warning-color: #d83b01;
+  --danger-color: #d13438;
+  --info-color: #0072c6;
+  --light-color: #f3f2f1;
+  --dark-color: #201f1e;
+  --background: #f8f9fa;
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --transition-time: 0.3s;
+  --animation-time: 0.5s;
+  --border-radius: 6px;
+}
+
+body {
+  background: var(--background);
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--dark-color);
+  margin: 0;
+  padding: 0;
+}
+
+/* Modern Card Styles */
+.modern-card {
+  background: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  border: none;
+  overflow: hidden;
+  transition: transform var(--transition-time), box-shadow var(--transition-time);
+}
+
+.modern-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* App Container */
+.app-container {
+  padding: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Modern Header */
+.modern-header {
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.modern-header h1 {
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 0;
+}
+
+/* Navigation */
+.modern-nav {
+  margin-bottom: 2rem;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  background: white;
+  box-shadow: var(--card-shadow);
+}
+
+.modern-nav .nav-link {
+  color: var(--dark-color);
+  font-weight: 500;
+  padding: 0.75rem 1.25rem;
+  transition: all var(--transition-time);
+  position: relative;
+}
+
+.modern-nav .nav-link:hover {
+  color: var(--primary-color);
+}
+
+.modern-nav .nav-link.active {
+  color: var(--primary-color);
+  background: rgba(0, 120, 212, 0.05);
+}
+
+.modern-nav .nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--primary-color);
+}
+
+/* Modern Form Controls */
+.modern-form-control {
+  border-radius: var(--border-radius);
+  border: 2px solid #e1e1e1;
+  padding: 0.75rem;
+  transition: border var(--transition-time);
+}
+
+.modern-form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(0, 120, 212, 0.15);
+}
+
+.modern-form-control.font-monospace {
+  font-family: 'Cascadia Code', 'Consolas', monospace;
+  letter-spacing: 0.04em;
+}
+
+/* Modern Buttons */
+.modern-btn {
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  padding: 0.625rem 1.25rem;
+  transition: all var(--transition-time);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.modern-btn-primary {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  color: white;
+}
+
+.modern-btn-primary:hover {
+  background: var(--secondary-color);
+  border-color: var(--secondary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+}
+
+.modern-btn-secondary {
+  background: white;
+  border-color: #e1e1e1;
+  color: var(--dark-color);
+}
+
+.modern-btn-secondary:hover {
+  background: #f8f8f8;
+  border-color: #d1d1d1;
+}
+
+/* Ripple Effect for Buttons */
+.ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  transform: scale(10, 10);
+  opacity: 0;
+  transition: transform .5s, opacity 0.8s;
+}
+
+.ripple:active:after {
+  transform: scale(0, 0);
+  opacity: 0.3;
+  transition: 0s;
+}
+
+/* Modern Progress Bar */
+.modern-progress {
+  height: 0.75rem;
+  border-radius: var(--border-radius);
+  background-color: #e9ecef;
+  overflow: hidden;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.modern-progress-bar {
+  height: 100%;
+  border-radius: var(--border-radius);
+  background-image: linear-gradient(45deg, 
+    rgba(255, 255, 255, 0.15) 25%, transparent 25%, 
+    transparent 50%, rgba(255, 255, 255, 0.15) 50%, 
+    rgba(255, 255, 255, 0.15) 75%, transparent 75%, 
+    transparent);
+  background-size: 1rem 1rem;
+  animation: progress-stripes 1s linear infinite;
+}
+
+@keyframes progress-stripes {
+  from { background-position: 1rem 0; }
+  to { background-position: 0 0; }
+}
+
+/* Modern Badges */
+.modern-badge {
+  padding: 0.35em 0.65em;
+  font-weight: 700;
+  border-radius: 20px;
+  font-size: 0.85em;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to { 
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+.fade-in {
+  animation: fadeIn var(--animation-time) ease-in;
+}
+
+.slide-up {
+  animation: slideUp var(--animation-time) ease-out;
+}
+
+.pulse {
+  animation: pulse 1.5s infinite;
+}
+
+/* KeyChecker component specific styles */
+.key-checker-container {
+  animation: fadeIn 0.5s ease;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.progress-stage {
+  animation: pulse 1.5s infinite;
+}
+
+/* Key result animation */
+.key-result-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.key-result-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 500ms, transform 500ms;
+}
+
+/* Modern looking form inputs */
+.key-input {
+  font-family: 'Cascadia Code', 'Consolas', monospace;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* Status badge animations */
+.status-badge {
+  animation: slideUp 0.3s ease-out;
+  transition: all 0.3s ease;
+}
+
+.status-badge:hover {
+  transform: scale(1.05);
+}
+
+/* Shimmer effect for loading state */
+.shimmer {
+  background: linear-gradient(90deg, 
+    rgba(255,255,255,0) 0%, 
+    rgba(255,255,255,0.5) 50%, 
+    rgba(255,255,255,0) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Page transitions */
+.page-transition-enter {
+  animation: fadeAndSlideIn var(--animation-time) ease-out forwards;
+}
+
+.page-transition-exit {
+  animation: fadeAndSlideOut var(--animation-time) ease-in forwards;
+}
+
+@keyframes fadeAndSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeAndSlideOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+/* Loading spinner animation */
+.spin {
+  animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Дополнительные стили для навигации */
+.modern-nav-link {
+  padding: 0.75rem 1rem;
+  color: var(--dark-color);
+  font-weight: 500;
+  position: relative;
+  transition: all var(--transition-time);
+  margin: 0 0.25rem;
+  border-radius: var(--border-radius);
+}
+
+.modern-nav-link:hover, .modern-nav-link:focus {
+  color: var(--primary-color);
+  background: rgba(0, 120, 212, 0.08);
+}
+
+.modern-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  right: 50%;
+  height: 2px;
+  background-color: var(--primary-color);
+  transition: all var(--transition-time);
+  opacity: 0;
+}
+
+.modern-nav-link:hover::after, .modern-nav-link:focus::after {
+  left: 15%;
+  right: 15%;
+  opacity: 1;
+}
+
+.modern-nav-link.active {
+  color: var(--primary-color);
+  background: rgba(0, 120, 212, 0.12);
+}
+
+.modern-nav-link.active::after {
+  left: 5%;
+  right: 5%;
+  opacity: 1;
+}
+
+/* Улучшенные стили для логотипа */
+.logo .navbar-brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  transition: all var(--transition-time);
+  padding: 0.5rem 0;
+  position: relative;
+  display: inline-block;
+}
+
+.logo .navbar-brand:hover, .logo .navbar-brand:focus {
+  transform: scale(1.03);
+  text-shadow: 0 0 2px rgba(0, 120, 212, 0.3);
+  color: var(--secondary-color);
+}
+
+/* Современные стили для мобильной версии */
+@media (max-width: 992px) {
+  .modern-nav .d-flex {
+    flex-direction: column;
+  }
+  
+  .modern-nav-link {
+    padding: 0.75rem 1.5rem;
+    margin: 0.25rem 0;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .modern-nav-link::after {
+    bottom: auto;
+    top: 0;
+    height: 0;
+    width: 3px;
+    left: 0;
+  }
+  
+  .modern-nav-link:hover::after, .modern-nav-link:focus::after,
+  .modern-nav-link.active::after {
+    height: 100%;
+    right: auto;
+  }
+} 

@@ -1,0 +1,154 @@
+[
+  {
+    "provider": "NordVPN",
+    "name": "NordVPN",
+    "auth_data": {},
+    "current_region": null,
+    "status": "disconnected",
+    "error_message": null,
+    "regions": [
+      {
+        "id": "in",
+        "name": "India",
+        "code": "IN",
+        "is_active": true
+      },
+      {
+        "id": "ar",
+        "name": "Argentina",
+        "code": "AR",
+        "is_active": true
+      },
+      {
+        "id": "tr",
+        "name": "Turkey",
+        "code": "TR",
+        "is_active": true
+      },
+      {
+        "id": "us",
+        "name": "United States",
+        "code": "US",
+        "is_active": true
+      },
+      {
+        "id": "gb",
+        "name": "United Kingdom",
+        "code": "GB",
+        "is_active": true
+      },
+      {
+        "id": "de",
+        "name": "Germany",
+        "code": "DE",
+        "is_active": true
+      },
+      {
+        "id": "jp",
+        "name": "Japan",
+        "code": "JP",
+        "is_active": true
+      },
+      {
+        "id": "sg",
+        "name": "Singapore",
+        "code": "SG",
+        "is_active": true
+      },
+      {
+        "id": "br",
+        "name": "Brazil",
+        "code": "BR",
+        "is_active": true
+      },
+      {
+        "id": "au",
+        "name": "Australia",
+        "code": "AU",
+        "is_active": true
+      }
+    ]
+  },
+  {
+    "provider": "Surfshark",
+    "name": "Surfshark",
+    "auth_data": {},
+    "current_region": null,
+    "status": "disconnected",
+    "error_message": null,
+    "regions": [
+      {
+        "id": "in",
+        "name": "India",
+        "code": "IN",
+        "is_active": true
+      },
+      {
+        "id": "ar",
+        "name": "Argentina",
+        "code": "AR",
+        "is_active": true
+      },
+      {
+        "id": "tr",
+        "name": "Turkey",
+        "code": "TR",
+        "is_active": true
+      },
+      {
+        "id": "us",
+        "name": "United States",
+        "code": "US",
+        "is_active": true
+      },
+      {
+        "id": "gb",
+        "name": "United Kingdom",
+        "code": "GB",
+        "is_active": true
+      },
+      {
+        "id": "de",
+        "name": "Germany",
+        "code": "DE",
+        "is_active": true
+      },
+      {
+        "id": "jp",
+        "name": "Japan",
+        "code": "JP",
+        "is_active": true
+      },
+      {
+        "id": "sg",
+        "name": "Singapore",
+        "code": "SG",
+        "is_active": true
+      },
+      {
+        "id": "br",
+        "name": "Brazil",
+        "code": "BR",
+        "is_active": true
+      },
+      {
+        "id": "au",
+        "name": "Australia",
+        "code": "AU",
+        "is_active": true
+      }
+    ]
+  },
+  {
+    "provider": "Custom",
+    "name": "Custom VPN",
+    "auth_data": {
+      "connect_command": "echo Connecting to {region}",
+      "disconnect_command": "echo Disconnecting"
+    },
+    "current_region": null,
+    "status": "disconnected",
+    "error_message": null,
+    "regions": []
+  }
+]

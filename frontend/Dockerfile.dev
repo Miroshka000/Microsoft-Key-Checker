@@ -1,0 +1,19 @@
+FROM node:18-alpine
+
+WORKDIR /app
+
+# Копируем package.json и package-lock.json
+COPY package*.json ./
+
+# Устанавливаем зависимости
+RUN npm install
+
+# Копирование исходного кода не требуется, так как будет монтирование тома
+
+# Проверка наличия прокси в package.json
+RUN grep -q "\"proxy\":" package.json || echo "Ошибка: не найден параметр 'proxy' в package.json"
+
+EXPOSE 3000
+
+# Запускаем приложение в режиме разработки
+CMD ["npm", "start"] 
